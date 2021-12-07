@@ -1,0 +1,326 @@
+/*-----------------------------------------------------------------------------------
+
+    Template Name: Broflio - portfolio landing  HTML5 Template
+    Template URI: themepure.com
+    Description: Broflio - portfolio landing  HTML5 Template
+    Author: themepure
+    Author URI: themepure.net
+    Version: 1.0
+
+-----------------------------------------------------------------------------------
+
+    CSS INDEX
+    ===================
+
+    01. Theme default CSS
+	02. Header
+    03. about
+	04. brand
+	05. overlay
+	06. overview
+	07. page(brad-crumb)
+	08. portfolio
+	09. service section deseign
+	10. sidemenu
+	11. team section
+	12. testimonial section
+	13. footer design
+
+-----------------------------------------------------------------------------------*/
+/*----------------------------------------*/
+/*  01. Theme default CSS
+/*----------------------------------------*/
+@use  './mixins' as *;
+@use  './variables' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+ body {
+	font-family: $playfair;
+	font-weight: normal;
+    font-style: normal;
+    color:$body-text-color;
+	font-size: 16px;
+}
+.img,img {
+	max-width: 100%;
+	@include transition(.3s);
+}
+.f-left {
+	float: left
+}
+.f-right {
+	float: right
+}
+.fix {
+	overflow: hidden
+}
+.p-relative{
+	position: relative;
+}
+a{
+	text-decoration: none
+}
+a,
+.button,
+input,
+textarea,
+.offcanvas-overlay {
+	@include transition(.3s);
+}
+a:focus,
+.button:focus {
+	text-decoration: none;
+	outline: none;
+}
+a:focus,
+a:hover
+{
+	color: inherit;
+	text-decoration: none;
+}
+a,
+button {
+	color: inherit;
+	outline: medium none;
+}
+button:focus,input:focus,input:focus,textarea,textarea:focus{outline: 0}
+.uppercase {
+	text-transform: uppercase;
+}
+.capitalize {
+	text-transform: capitalize;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $playfair;
+	font-weight: normal;
+	color: $body-text-color;
+	margin-top: 0px;
+	font-style: normal;
+	font-weight: 400;
+	text-transform: normal;
+}
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+	color: inherit;
+}
+h1 {
+	font-size: 40px;
+	font-weight: 500;
+}
+h2 {
+	font-size: 35px;
+}
+h3 {
+	font-size: 28px;
+}
+h4 {
+	font-size: 22px;
+}
+h5 {
+	font-size: 18px;
+}
+h6 {
+	font-size: 16px;
+}
+ul {
+	margin: 0px;
+	padding: 0px;
+}
+li {
+	list-style: none
+}
+p {
+	font-family: $enter;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 26px;
+	color: $body-text-color;
+	margin-bottom: 15px;
+}
+span{
+	font-family: $enter;
+}
+hr {
+	border-top: 0 none;
+	margin: 30px 0;
+	padding: 0;
+}
+label {
+	color: $blacksoft;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 400;
+}
+*::-moz-selection {
+	background: $black;
+	color: $white;
+	text-shadow: none;
+}
+::-moz-selection {
+	background: $black;
+	color:$white;
+	text-shadow: none;
+}
+::selection {
+	background: $black;
+	color: $white;
+	text-shadow: none;
+}
+
+/*--
+    - Input Placeholder
+-----------------------------------------*/
+*::-moz-placeholder {
+	color: $black;
+	font-size: 14px;
+	opacity: 1;
+}
+*::placeholder {
+	color: $black;
+	font-size: 14px;
+	opacity: 1;
+}
+
+
+/*--
+    - Common Classes
+-----------------------------------------*/
+.fix {
+    overflow:hidden
+}
+.clear{
+    clear: both;
+}
+
+
+/*--
+    - Background color
+-----------------------------------------*/
+.grey-bg {
+	background: $grey;
+}
+.white-bg {
+	background:$white;
+}
+.black-bg {
+	background: $black;
+}
+.theme-bg {
+	background: $theme-color;
+}
+// .primary-bg {
+// 	background: #222;
+// }
+
+/*--
+    - color
+-----------------------------------------*/
+.white-color {
+	color: $white;
+}
+.black-color {
+	color: $black;
+}
+.theme-color {
+	color: $theme-color;
+}
+// .primary-color {
+// 	color: #222;
+// }
+
+/*--
+    - Margin & Padding
+-----------------------------------------*/
+/*-- Margin Top --*/
+@for $i from 1 through 40 {
+    .mt-#{5 * $i}{margin-top: 5px * $i;}
+}
+
+/*-- Margin Bottom --*/
+@for $i from 1 through 40 {
+    .mb-#{5 * $i}{margin-bottom: 5px *$i;}
+}
+/*-- Margin Left --*/
+@for $i from 1 through 40 {
+    .ml-#{5 * $i}{margin-left: 5px * $i;}
+}
+
+/*-- Margin Right --*/
+@for $i from 1 through 40 {
+    .mr-#{5 * $i}{margin-right: 5px *$i;}
+}
+
+/*-- Padding Top --*/
+@for $i from 1 through 40 {
+    .pt-#{5 * $i}{padding-top: 5px *$i;}
+}
+
+/*-- Padding Bottom --*/
+@for $i from 1 through 40 {
+    .pb-#{5 * $i}{padding-bottom: 5px *$i;}
+}
+
+/*-- Padding Left --*/
+@for $i from 1 through 40 {
+    .pl-#{5 * $i}{padding-left: 5px *$i;}
+}
+
+/*-- Padding Right --*/
+@for $i from 1 through 40 {
+    .pr-#{5 * $i}{padding-right: 5px *$i;}
+}
+
+
+// others common css here :)
+.main-menu nav > ul > li.menu-item-has-children > a::after {
+	content: "";
+	font-family: "Font Awesome 5 Pro";
+	font-size: 13px;
+	margin-left: 7px;
+	font-weight: 600;
+}
+.header-transparent{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 9;
+
+}
+.error_title{
+	font-weight: 700;
+}
+.error__area {
+	@include mq(lg){
+		padding-top: 30px;
+		margin-bottom: 50px;
+	}
+}
+.error__img {
+	@include mq(lg){
+		padding-top: 135px;
+	}
+}
+.row.padding-increase{
+	--bs-gutter-x: 30px;
+}
+
+.popup-image:hover {
+	background: #fff;
+	border-radius: 50%;
+	color: #f00;
+	z-index: 999;
+	& i{
+		color: #f00;
+	}
+}

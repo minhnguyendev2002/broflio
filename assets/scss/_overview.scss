@@ -1,0 +1,102 @@
+/*----------------------------------------*/
+/*  06. overview
+/*----------------------------------------*/
+
+@use './common' as *;
+@use './custom-animation' as *;
+@use './mixins' as *;
+@use './variables' as *;
+
+.overview__area{
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    @include mq(sm){
+        margin-bottom: 40px;
+    }
+    @include mq(xs){
+        padding-top: 70px;
+    }
+    &::before{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgb(43, 43, 82);
+        content: "";
+        opacity: .7;
+        z-index: 22;
+    }
+
+}
+.team__area {
+	@include mq(xs){
+        margin-bottom: 50px;
+    }
+}
+.blog__area {
+	@include mq(xs){
+        padding: 40px 0;
+    }
+}
+.overview{
+    &__text{
+        position: relative;
+        z-index: 99;
+        & h2{
+            font-size: 80px;
+            font-weight: 800;
+            color: $white;
+            @include mq(xs){
+                font-size: 28px;
+            }
+            @include mq(sm){
+                font-size: 28px;
+            }
+            @include mq(md){
+                font-size: 40px;
+            }
+            @include mq(lg){
+                font-size: 70px;
+            }
+        }
+        & p{
+            font-size: 20px;
+            color: #c5c5d0;
+        }
+    }
+}
+.video{
+    position: relative;
+    z-index: 99;
+}
+.play-btn-1{
+    height: 90px;
+    width: 90px;
+    background: $white;
+    line-height: 100px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 50px;
+    position: absolute;
+    right: 94px;
+    top: 102px;
+    transform: translateY(-50%);
+    color: $theme-color;
+    animation: pulse 2s infinite;
+    @include mq(xs){
+        right: 40px;
+        top: 66px;
+    }
+    @include mq(sm){
+        right: auto;
+        bottom: 65px;
+        left: 0;
+    }
+    @include mq(xs){
+        right: auto;
+        bottom: 65px;
+        left: 0;
+    }
+}

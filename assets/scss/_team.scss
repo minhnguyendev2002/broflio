@@ -1,0 +1,107 @@
+/*----------------------------------------*/
+/*  11. team section
+/*----------------------------------------*/
+
+@use './common' as *;
+@use './custom-animation' as *;
+@use './mixins' as *;
+@use './variables' as *;
+
+.team_single{
+    position: relative;
+
+    &__thumb{
+        position: relative;
+        & img{
+            width: 100%;
+        }
+        &::before{
+            position: absolute;
+            content: "";
+            height: 100%;
+            width: 100%;
+            background: $theme-color;
+            transform: scaleY(0);
+            @include transition(.3s);
+            opacity: 0;
+            transform-origin: top;
+            visibility: hidden;
+        }
+    }
+    &__content{
+        & span{
+            font-size: 14px;
+            margin-bottom: 5px;
+            display: inline-block;
+            text-transform: capitalize;
+        }
+        & h3{
+            font-size: 18px;
+            font-weight: 800;
+            text-transform: capitalize;
+        }
+    }
+    &__hover{
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        @include transition(.5s);
+        & ul{
+            & li{
+                list-style: none;
+                & a{
+                    display: inline-block;
+                    text-align: center;
+                    height: 40px;
+                    width: 40px;
+                    border: 2px solid $white;
+                    line-height: 38px;
+                    margin-bottom: 10px;
+                    color: $white;
+                    @include transition(.3s);
+                    &:hover{
+                        background: $theme-color;
+                        @include transition(.3s);
+                    }
+                }
+            }
+        }
+    }
+    &:hover .hover-team{
+        opacity: 1;
+        visibility: visible;
+        @include transition(.5s);
+    }
+    &:hover .thumb-hover::before{
+        transform: scaleY(1);
+        opacity: .9;
+        visibility: visible;
+        @include transition(.5s);
+    }
+}
+.b_hover{
+	&:hover{
+        color: $theme-color;
+    }
+}
+.copyright-wrap {
+	& strong{
+        text-transform: capitalize;
+    }
+}
+
+.team-active{
+    & .swiper-pagination-bullet{
+        display: inline-block;
+        width: 9px;
+        height: 9px;
+        background: #c9c0c4;
+        border-radius: 50%;
+        &.swiper-pagination-bullet-active{
+            background: #ea4c89;
+        }
+    }
+}

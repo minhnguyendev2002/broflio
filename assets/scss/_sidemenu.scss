@@ -1,0 +1,88 @@
+/*----------------------------------------*/
+/*  10. sidemenu
+/*----------------------------------------*/
+
+@use './common' as *;
+@use './custom-animation' as *;
+@use './mixins' as *;
+@use './variables' as *;
+
+.sidemenu__area{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: $body-text-color;
+    z-index: 999999999;
+    display: none;
+}
+.sidemenu__wrap{
+    @include mq(xs){
+        padding: 36px 18px;
+    }
+    & ul{
+        text-align: center;
+        @include mq(xs){
+            text-align: left;
+        }
+        li{
+            & a{
+                color: $white;
+                font-size: 80px;
+                text-transform: capitalize;
+                display: inline-block;
+                padding: 10px 0;
+                @include transition(.3s);
+                position: relative;
+                @include mq(xs){
+                    font-size: 30px;
+                }
+                &::before{
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 0%;
+                    height: 2px;
+                    content: "";
+                    background: $theme-color;
+                    @include transition(.3s);
+                }
+                &:hover{
+                    color: $theme-color;
+                    @include transition(.3s);
+                    &::before{   
+                        width: 100%;
+                        @include transition(.3s);
+                    }
+                }
+            }
+        }
+    }
+}
+.close-icon {
+	display: inline-block;
+	position: absolute;
+	right: 40px;
+	top: 40px;
+    & button{
+        background: transparent;
+        color: #fff;
+        border: 0;
+        font-size: 40px;
+    }
+}
+.offcanvas-overlay.overlay_2 {
+	z-index: 9;
+}
+.hero_text.hero_text_2 {
+	position: relative;
+    z-index: 999;
+}
+#pp-nav {
+	position: fixed;
+	z-index: 9;
+	margin-top: -32px;
+	top: 50%;
+	opacity: 1;
+}
