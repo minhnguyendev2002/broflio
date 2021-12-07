@@ -2461,7 +2461,7 @@ label {
 
 .hero_text.hero_text_2 {
   position: relative;
-  z-index: 999;
+  z-index: 1;
 }
 
 /* sidebar */
