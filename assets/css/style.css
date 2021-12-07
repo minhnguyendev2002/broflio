@@ -223,6 +223,7 @@ label {
 .pt-120 { padding-top: 120px; }
 /*-- Padding Bottom --*/
 .pb-140 { padding-bottom: 140px; }
+.pl-145 { padding-left: 145px; }
 /*-- Padding Left --*/
 .pr-70 { padding-right: 70px; }
 .pr-145 { padding-right: 145px; }
@@ -276,6 +277,13 @@ label {
 /*----------------------------------------*/
 /*  02. Header
 /*----------------------------------------*/
+.header-transparent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+}
 @media (max-width: 767px) {
   .header__area {
     padding-top: 20px;
@@ -2454,4 +2462,81 @@ label {
 .hero_text.hero_text_2 {
   position: relative;
   z-index: 999;
+}
+
+/* sidebar */
+.sidebar__widget-title h4 {
+  font-size: 22px;
+  position: relative;
+  padding-bottom: 12px;
+}
+.sidebar__widget-title h4::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  height: 2px;
+  background: #ea4c89;
+}
+.sidebar__widget-content .search {
+  position: relative;
+}
+.sidebar__widget-content .search input {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding: 0 15px;
+  background: #f7f7f7;
+  color: #1f1841;
+}
+.sidebar__widget-content .search input::placeholder {
+  color: #8f8f9a;
+}
+.sidebar__widget-content .search button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  color: #ea4c89;
+  background: transparent;
+  border: 0;
+}
+.sidebar__widget-content .cat-link ul li {
+  margin-bottom: 15px;
+}
+.sidebar__widget-content .cat-link ul li:last-child {
+  margin-bottom: 0;
+}
+.sidebar__widget-content .cat-link ul li a {
+  padding-left: 20px;
+  position: relative;
+  font-weight: 500;
+}
+.sidebar__widget-content .cat-link ul li a::after {
+  position: absolute;
+  content: "\f105";
+  left: 0;
+  top: 0;
+  font-family: "Font Awesome 5 Pro";
+  font-size: 16px;
+  color: #ea4c89;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+.sidebar__widget-content .cat-link ul li a:hover {
+  color: #ea4c89;
+}
+.sidebar__widget-content .cat-link ul li a:hover::after {
+  left: 5px;
 }
